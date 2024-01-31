@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/x-ndjson" -XPOST --insecure -u elastic:4NYmsBkxQ11s_1x1diVN https://localhost:9200/bible-book/_bulk --data-binary "@all-books-with-index.json"

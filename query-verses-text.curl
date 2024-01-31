@@ -1,0 +1,35 @@
+FORMATTED
+curl -H "kbn-xsrf: reporting" -H "Content-Type: application/json" -XPOST --insecure -u elastic:4NYmsBkxQ11s_1x1diVN https://localhost:9200/bible-book/_search -d "
+{  
+  \"_source\": false,
+  \"query\": {
+    \"nested\": {
+      \"path\": \"chapters.verses\",
+      \"query\": {
+        \"match\": {
+          \"chapters.verses.text\": \"consolation\"
+        }
+      },
+      \"inner_hits\": {}
+    }
+  }
+}"
+
+curl -H "kbn-xsrf: reporting" -H "Content-Type: application/json" -XPOST --insecure -u elastic:4NYmsBkxQ11s_1x1diVN https://localhost:9200/bible-book/_search -d "{  \"_source\": false,   \"query\": {    \"nested\": {      \"path\": \"chapters.verses\",      \"query\": {        \"match\": {          \"chapters.verses.text\": \"consolation\"        }      },      \"inner_hits\": {}    }  }}"
+
+
+POST bible-book/_search
+{  
+  "_source": false,
+  "query": {
+    "nested": {
+      "path": "chapters.verses",
+      "query": {
+        "match": {
+          "chapters.verses.text": "consolation"
+        }
+      },
+      "inner_hits": {}
+    }
+  }
+}

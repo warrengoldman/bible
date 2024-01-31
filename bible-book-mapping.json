@@ -1,0 +1,25 @@
+PUT /bible-book
+{
+  "mappings": {
+    "properties": {
+      "book": { "type": "text" },
+      "chapters": {
+        "type": "nested",
+        "properties": {
+          "chapter": {
+            "type": "integer"
+          },
+          "verses": {
+            "type": "nested",
+            "properties": {
+              "verse": {
+                "type": "integer"
+              },
+              "text": { "type": "text", "analyzer": "english" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

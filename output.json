@@ -1,0 +1,490 @@
+{
+    "took": 48,
+    "timed_out": false,
+    "_shards":
+    {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits":
+    {
+        "total":
+        {
+            "value": 9,
+            "relation": "eq"
+        },
+        "max_score": 8.959742,
+        "hits":
+        [
+            {
+                "_index": "bible-book",
+                "_id": "44",
+                "_score": 8.959742,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 2,
+                                "relation": "eq"
+                            },
+                            "max_score": 10.2001705,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "44",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 14,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 30
+                                        }
+                                    },
+                                    "_score": 10.2001705,
+                                    "_source":
+                                    {
+                                        "verse": "31",
+                                        "text": "Which when they had read, they rejoiced for the consolation."
+                                    }
+                                },
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "44",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 3,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 35
+                                        }
+                                    },
+                                    "_score": 7.7193117,
+                                    "_source":
+                                    {
+                                        "verse": "36",
+                                        "text": "And Joses, who by the apostles was surnamed Barnabas, (which is, being interpreted, The son of consolation,) a Levite, and of the country of Cyprus,"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "45",
+                "_score": 8.551235,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 1,
+                                "relation": "eq"
+                            },
+                            "max_score": 8.551235,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "45",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 14,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 4
+                                        }
+                                    },
+                                    "_score": 8.551235,
+                                    "_source":
+                                    {
+                                        "verse": "5",
+                                        "text": "Now the God of patience and consolation grant you to be likeminded one toward another according to Christ Jesus:"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "57",
+                "_score": 8.254694,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 1,
+                                "relation": "eq"
+                            },
+                            "max_score": 8.254694,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "57",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 0,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 6
+                                        }
+                                    },
+                                    "_score": 8.254694,
+                                    "_source":
+                                    {
+                                        "verse": "7",
+                                        "text": "For we have great joy and consolation in thy love, because the bowels of the saints are refreshed by thee, brother."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "42",
+                "_score": 8.208551,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 2,
+                                "relation": "eq"
+                            },
+                            "max_score": 9.584135,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "42",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 5,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 23
+                                        }
+                                    },
+                                    "_score": 9.584135,
+                                    "_source":
+                                    {
+                                        "verse": "24",
+                                        "text": "But woe unto you that are rich! for ye have received your consolation."
+                                    }
+                                },
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "42",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 1,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 24
+                                        }
+                                    },
+                                    "_score": 6.832967,
+                                    "_source":
+                                    {
+                                        "verse": "25",
+                                        "text": "And, behold, there was a man in Jerusalem, whose name was Simeon; and the same man was just and devout, waiting for the consolation of Israel: and the Holy Ghost was upon him."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "47",
+                "_score": 8.172588,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 4,
+                                "relation": "eq"
+                            },
+                            "max_score": 9.254648,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "47",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 0,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 5
+                                        }
+                                    },
+                                    "_score": 9.254648,
+                                    "_source":
+                                    {
+                                        "verse": "6",
+                                        "text": "And whether we be afflicted, it is for your consolation and salvation, which is effectual in the enduring of the same sufferings which we also suffer: or whether we be comforted, it is for your consolation and salvation."
+                                    }
+                                },
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "47",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 0,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 4
+                                        }
+                                    },
+                                    "_score": 9.038271,
+                                    "_source":
+                                    {
+                                        "verse": "5",
+                                        "text": "For as the sufferings of Christ abound in us, so our consolation also aboundeth by Christ."
+                                    }
+                                },
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "47",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 0,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 6
+                                        }
+                                    },
+                                    "_score": 7.8465395,
+                                    "_source":
+                                    {
+                                        "verse": "7",
+                                        "text": "And our hope of you is stedfast, knowing, that as ye are partakers of the sufferings, so shall ye be also of the consolation."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "50",
+                "_score": 7.8465395,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 1,
+                                "relation": "eq"
+                            },
+                            "max_score": 7.8465395,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "50",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 1,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 0
+                                        }
+                                    },
+                                    "_score": 7.8465395,
+                                    "_source":
+                                    {
+                                        "verse": "1",
+                                        "text": "If there be therefore any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any bowels and mercies,"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "53",
+                "_score": 7.5961437,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 1,
+                                "relation": "eq"
+                            },
+                            "max_score": 7.5961437,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "53",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 1,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 15
+                                        }
+                                    },
+                                    "_score": 7.5961437,
+                                    "_source":
+                                    {
+                                        "verse": "16",
+                                        "text": "Now our Lord Jesus Christ himself, and God, even our Father, which hath loved us, and hath given us everlasting consolation and good hope through grace,"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "24",
+                "_score": 6.832967,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 1,
+                                "relation": "eq"
+                            },
+                            "max_score": 6.832967,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "24",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 15,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 6
+                                        }
+                                    },
+                                    "_score": 6.832967,
+                                    "_source":
+                                    {
+                                        "verse": "7",
+                                        "text": "Neither shall men tear themselves for them in mourning, to comfort them for the dead; neither shall men give them the cup of consolation to drink for their father or for their mother."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            {
+                "_index": "bible-book",
+                "_id": "58",
+                "_score": 6.7362823,
+                "inner_hits":
+                {
+                    "chapters.verses":
+                    {
+                        "hits":
+                        {
+                            "total":
+                            {
+                                "value": 1,
+                                "relation": "eq"
+                            },
+                            "max_score": 6.7362823,
+                            "hits":
+                            [
+                                {
+                                    "_index": "bible-book",
+                                    "_id": "58",
+                                    "_nested":
+                                    {
+                                        "field": "chapters",
+                                        "offset": 5,
+                                        "_nested":
+                                        {
+                                            "field": "verses",
+                                            "offset": 17
+                                        }
+                                    },
+                                    "_score": 6.7362823,
+                                    "_source":
+                                    {
+                                        "verse": "18",
+                                        "text": "That by two immutable things, in which it was impossible for God to lie, we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us:"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
