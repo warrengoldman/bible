@@ -1,3 +1,5 @@
 package com.bibleapp.dto;
 
-public record ChapterVerseOffset(int chapterOffset, int verseOffset) {}
+import java.io.Serializable;
+
+public record ChapterVerseOffset(int chapterOffset, int verseOffset) implements Serializable {}

@@ -1,8 +1,10 @@
 package com.bibleapp.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Chapter {
+public class Chapter implements Serializable {
+	private static final long serialVersionUID = 7812604598985095180L;
 	private int chapter;
 	private List<Verse> verses;
 	public int getChapter() {

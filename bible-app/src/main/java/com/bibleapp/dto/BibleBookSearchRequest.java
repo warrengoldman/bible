@@ -1,5 +1,7 @@
 package com.bibleapp.dto;
 
-public record BibleBookSearchRequest(String query, boolean includeSource) {
+import java.io.Serializable;
+
+public record BibleBookSearchRequest(String query, boolean includeSource) implements Serializable {
 
 }

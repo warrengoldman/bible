@@ -1,3 +1,5 @@
 package com.bibleapp.dto;
 
-public record BibleBookHit(ChapterVerseOffset chapterVerseOffset, String verse) {};
+import java.io.Serializable;
+
+public record BibleBookHit(ChapterVerseOffset chapterVerseOffset, String verse) implements Serializable {};

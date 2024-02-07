@@ -1,6 +1,9 @@
 package com.bibleapp.domain;
 
-public class Verse {
+import java.io.Serializable;
+
+public class Verse implements Serializable {
+	private static final long serialVersionUID = -5742319165698283277L;
 	private int verse;
 	private String text;
 
