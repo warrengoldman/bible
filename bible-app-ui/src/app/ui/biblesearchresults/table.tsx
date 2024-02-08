@@ -8,7 +8,7 @@ export default async function Table({
 }) {
   if (query && query.trim() !== '') {
     let bibleBookSearchResult = await searchBible(query);
-    return <BibleSearchResultsTable bibleBookSearchResult = {bibleBookSearchResult} />;
+    return <BibleSearchResultsTable bibleBookSearchResult = {bibleBookSearchResult} query={query} />;
   } else {
     return (<div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">

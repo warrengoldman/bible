@@ -1,11 +1,13 @@
-import Link from 'next/link';
+'use client'
 import BibleBookHitTable from './bible-book-hit-table';
 import BibleBookSearchResultHeader from './bible-search-result-header';
 
-export default async function BibleSearchResultsTable({
+export default function BibleSearchResultsTable({
   bibleBookSearchResult,
+  query
 }: {
-  bibleBookSearchResult: BibleBookSearchResult[]
+  bibleBookSearchResult: BibleBookSearchResult[],
+  query: string
 }) {
   return (
     <div className="mt-6 flow-root">
@@ -19,7 +21,7 @@ export default async function BibleSearchResultsTable({
               >
                 <BibleBookSearchResultHeader bibleBookSearchResult={bibleBookHit} />
                 <div>
-                  <BibleBookHitTable bibleBookHits = {bibleBookHit.bibleBookHits} />
+                  <BibleBookHitTable bibleBookHits = {bibleBookHit.bibleBookHits} query={query} />
                 </div>
               </div>
             ))}

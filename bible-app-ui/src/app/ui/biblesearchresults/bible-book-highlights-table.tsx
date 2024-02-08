@@ -1,6 +1,7 @@
+'use client'
 import Link from "next/link";
 
-export default async function BibleBookHighlightsTable({
+export default function BibleBookHighlightsTable({
   highlights,
 }: {
   highlights: string[];

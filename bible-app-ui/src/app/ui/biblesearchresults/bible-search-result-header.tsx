@@ -1,6 +1,6 @@
-import Link from 'next/link';
+'use client'
 
-export default async function BibleBookSearchResultHeader ({
+export default function BibleBookSearchResultHeader ({
   bibleBookSearchResult,
 }: {
   bibleBookSearchResult: BibleBookSearchResult

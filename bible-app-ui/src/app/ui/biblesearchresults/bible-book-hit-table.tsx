@@ -1,11 +1,13 @@
-import Link from 'next/link';
+'use client'
 import BibleBookHighlightsTable from './bible-book-highlights-table';
 import BibleBookVersesTable from './bible-book-verses-table';
 
-export default async function BibleBookHitTable ({
+export default function BibleBookHitTable ({
   bibleBookHits,
+  query
 }: {
-  bibleBookHits: BibleBookHit[]
+  bibleBookHits: BibleBookHit[],
+  query: string
 }) {
   return (
     <table className="min-w-full text-gray-900 md:table">
@@ -29,7 +31,7 @@ export default async function BibleBookHitTable ({
             </tr>
             <tr>
               <td colSpan={2}>
-                <BibleBookVersesTable verseHits={bbHit.bibleBookHits} bibleBookId={bbHit.bibleBook.id} />
+                <BibleBookVersesTable verseHits={bbHit.bibleBookHits} bibleBookId={bbHit.bibleBook.id} query={query} />
               </td>
             </tr>
             <tr>
