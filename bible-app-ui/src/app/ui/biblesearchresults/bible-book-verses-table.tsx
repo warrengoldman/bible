@@ -23,7 +23,7 @@ export default async function BibleBookVersesTable ({
       <tr key={verseHit.chapterVerseOffset.verseOffset}>
         <td>
           <Link className="text-blue-600 text-sm hover:text-blue-900"
-            href={`/dashboard/bible-chapter/${bibleBookId}/${verseHit.chapterVerseOffset.chapterOffset}`}
+            href={`/dashboard/bible-chapter/${bibleBookId}/${verseHit.chapterVerseOffset.chapterOffset+1}`}
           >
             {verseHit.chapterVerseOffset.chapterOffset + 1}
           </Link>
