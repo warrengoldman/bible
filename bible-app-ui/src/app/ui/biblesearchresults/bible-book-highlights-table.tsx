@@ -7,7 +7,7 @@ export default function BibleBookHighlightsTable({
   highlights: string[];
 }) {
   return (
-    <table className="ml-10 min-w-full ">
+    <table className="ml-10 min-w-full">
       <thead className="rounded-lg text-left text-sm font-normal">
         <tr>
           <th>Searched Text Highlighted</th>
@@ -16,12 +16,10 @@ export default function BibleBookHighlightsTable({
       <tbody className="bg-white">
         {highlights?.map((highlight) => (
           <tr key={highlight}>
-            <td>
-              <span
-                dangerouslySetInnerHTML={{
+            <td dangerouslySetInnerHTML={{
                   __html: highlight,
                 }}
-              ></span>
+              >
             </td>
           </tr>
         ))}

@@ -1,5 +1,5 @@
 'use client'
-import BibleBookHitTable from './bible-book-hit-table';
+import BibleBookHitsTable from './bible-book-hits-table';
 import BibleBookSearchResultHeader from './bible-search-result-header';
 
 export default function BibleSearchResultsTable({
@@ -21,7 +21,7 @@ export default function BibleSearchResultsTable({
               >
                 <BibleBookSearchResultHeader bibleBookSearchResult={bibleBookHit} />
                 <div>
-                  <BibleBookHitTable bibleBookHits = {bibleBookHit.bibleBookHits} query={query} />
+                  <BibleBookHitsTable bibleBookHits = {bibleBookHit.bibleBookHits} query={query} />
                 </div>
               </div>
             ))}
