@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react';
 import BibleBookHitsTable from './bible-book-hits-table';
 import BibleBookSearchResultHeader from './bible-search-result-header';
 
@@ -9,6 +10,8 @@ export default function BibleSearchResultsTable({
   bibleBookSearchResult: BibleBookSearchResult[],
   query: string
 }) {
+  
+  const [q, setQ] = useState(query);
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">

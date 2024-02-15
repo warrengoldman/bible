@@ -11,6 +11,7 @@ export default function BibleBookVersesTable ({
   bibleBookId: string,
   query: string
 }) {
+  let i = 1;
   return (
 
 <table className="ml-10 min-w-full ">
@@ -23,7 +24,7 @@ export default function BibleBookVersesTable ({
   </thead>
   <tbody className="bg-white">
     {verseHits?.map((verseHit) => (
-      <tr key={verseHit.chapterVerseOffset.verseOffset}>
+      <tr key={verseHit.chapterVerseOffset.chapterOffset + ':' + verseHit.chapterVerseOffset.verseOffset + ':' + (i++)}>
         <td>
           <Link className="text-blue-600 text-sm hover:text-blue-900"
             href={`/dashboard/bible-chapter/${bibleBookId}/${verseHit.chapterVerseOffset.chapterOffset+1}/${query}`}
