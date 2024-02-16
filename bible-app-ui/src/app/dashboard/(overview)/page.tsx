@@ -19,13 +19,13 @@ export default async function Page({
         Bible Search
       </h1>
       <div className="w-full">
-      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-        <Search placeholder="Search verses..." query={query}/>
+        <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+          <Search placeholder="Search verses..." query={query}/>
+        </div>
+        <Suspense key={query} fallback={<BibleResultsSkeleton />}>
+          <Table query={query} />
+        </Suspense>
       </div>
-      <Suspense key={query} fallback={<BibleResultsSkeleton />}>
-        <Table query={query} />
-      </Suspense>
-    </div>
     </main>
   );
 }

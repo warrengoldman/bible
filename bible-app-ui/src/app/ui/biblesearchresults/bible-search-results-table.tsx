@@ -13,7 +13,7 @@ export default function BibleSearchResultsTable({
   
   const [q, setQ] = useState(query);
   return (
-    <div className="mt-6 flow-root">
+    <div className="mt-1 flow-root">
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div>
