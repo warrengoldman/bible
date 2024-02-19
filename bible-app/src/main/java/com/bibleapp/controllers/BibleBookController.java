@@ -51,18 +51,34 @@ public class BibleBookController {
 		}
 	}
 
+	@GetMapping(path="metadata", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<BibleBookMetaData> getBibleBookMetaData() throws Exception {
+		return bibleBookService.getBibleBookMetaData();
+	}
+
+	public record BibleBookMetaData(String name, String id, Integer chapterCount) {};
+
+	private static Integer getInt(String strNum) {
+	    try {
+	        return Integer.valueOf(strNum);
+	    } catch (NumberFormatException ignoreReturnNull) {}
+	    return null;
+	}
+	
 	private BibleBook getBibleBookWithOnlyChapter(BibleBook bibleBook, String chapterOffset) {
 		BibleBook bibleBookWithOnlyChapter = new BibleBook();
 		bibleBookWithOnlyChapter.setId(bibleBook.getId());
 		bibleBookWithOnlyChapter.setBook(bibleBook.getBook());
-		List<Chapter> chapterNeeded = new ArrayList<>();
-		int chapterOffsetInt = Integer.valueOf(chapterOffset).intValue();
-		for (Chapter chapter:bibleBook.getChapters()) {
-			if (chapter.getChapter() == chapterOffsetInt) {
-				chapterNeeded.add(chapter);
+		Integer chapterOffsetInt = getInt(chapterOffset);
+		if (chapterOffsetInt != null) {
+			List<Chapter> chapterNeeded = new ArrayList<>();
+			for (Chapter chapter:bibleBook.getChapters()) {
+				if (chapter.getChapter() == chapterOffsetInt.intValue()) {
+					chapterNeeded.add(chapter);
+				}
 			}
+			bibleBookWithOnlyChapter.setChapters(chapterNeeded);
 		}
-		bibleBookWithOnlyChapter.setChapters(chapterNeeded);
 		return bibleBookWithOnlyChapter;
 	}
 

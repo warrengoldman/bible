@@ -1,6 +1,7 @@
 import { revalidatePath } from "next/cache";
 const SEARCH_URL = "http://localhost:8080/biblebook/search";
 const CHAPTER_URL = "http://localhost:8080/biblebook/chapter";
+const BIBLE_META_URL = "http://localhost:8080/biblebook/metadata";
 export async function searchBible(query) {
   const bibleBookSearchRequest = { query: query, includeSource: false };
   revalidatePath(SEARCH_URL);
@@ -17,11 +18,22 @@ export async function searchBible(query) {
   return bibleBookSearchResult;
 }
 
-
 export async function bibleBook(book, chapter) {
   const chapterUrl = CHAPTER_URL + "/" + book + "/" + chapter;
   revalidatePath(chapterUrl);
   const fetchedData = await fetch(chapterUrl, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).catch((e) => console.log(e));
+
+  return await fetchedData.json();
+}
+
+export async function bibleMetaData() {
+  revalidatePath(BIBLE_META_URL);
+  const fetchedData = await fetch(BIBLE_META_URL, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

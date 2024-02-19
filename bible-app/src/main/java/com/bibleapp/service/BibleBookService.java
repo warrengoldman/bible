@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import com.bibleapp.controllers.BibleBookController.BibleBookMetaData;
 import com.bibleapp.domain.BibleBook;
 import com.bibleapp.domain.Chapter;
 import com.bibleapp.dto.BibleBookHit;
@@ -31,6 +32,7 @@ import co.elastic.clients.elasticsearch.core.search.Hit;
 import co.elastic.clients.elasticsearch.core.search.InnerHits;
 import co.elastic.clients.json.JsonData;
 import co.elastic.clients.util.ObjectBuilder;
+import jakarta.json.JsonArray;
 
 @Service
 public class BibleBookService {
@@ -51,6 +53,32 @@ public class BibleBookService {
 
 	public BibleBookSearchResult getBibleBookSearchResults(String searchText, boolean includeSource) throws Exception {
 		return processResponse(findByVerseText(searchText, includeSource), "chapters.verses.text");
+	}
+
+	public List<BibleBookMetaData> getBibleBookMetaData() throws Exception {
+		List<BibleBookMetaData> metaDatas = new ArrayList<>();
+		SearchResponse<BibleBook> searchResponse = getMetaData();
+		List<Hit<BibleBook>> listHits = searchResponse.hits().hits();
+		for (Hit<BibleBook> bibleBookHit:listHits) {
+			String book = ((JsonArray) bibleBookHit.fields().get("book").toJson()).get(0).toString();
+			int nbrChaptersInBook  = ((JsonArray) bibleBookHit.fields().get("chapters").toJson()).size();
+			metaDatas.add(new BibleBookMetaData(book, bibleBookHit.id(), nbrChaptersInBook));
+		}
+		return metaDatas;
+	}
+
+	SearchResponse<BibleBook> getMetaData() throws Exception {
+		Function<Builder, ObjectBuilder<SearchRequest>> fn = g -> {
+			g.index("bible-book");
+			g.withJson(new StringReader("{\"_source\":  \"false\", \"fields\": [\"book\", \"chapters.chapter\" ] }"));
+			g.size(10000); // returning all, paging is not apparent for this api
+
+			return g;
+		};
+		SearchResponse<BibleBook> searchResponse = getElasticsearchClient().search(fn,
+		    BibleBook.class 	
+	    );
+		return searchResponse;
 	}
 
 	BibleBookSearchResult processResponse(SearchResponse<BibleBook> searchResponse, String highlightKey) throws Exception {

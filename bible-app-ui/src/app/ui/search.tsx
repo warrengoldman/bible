@@ -6,10 +6,12 @@ import { useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 export default function Search({
   placeholder,
-  query
+  query,
+  bookMetaData
 }: {
   placeholder: string
-  query: string;
+  query: string
+  bookMetaData: Object;
 }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -49,9 +51,7 @@ export default function Search({
   const chapterChange = (e) => {
     handleChapter(e.target.value, book, q);
   };
-  const bookMetaData = [];
-  bookMetaData.push({"name":"Genesis", "id": "1", "chapterCount": "50"})
-  bookMetaData.push({"name":"Exodus", "id": "2", "chapterCount": "40"})
+
   return (
     <span className="block">
       <div className="rounded-xl border-separate border-4 border-green-500">

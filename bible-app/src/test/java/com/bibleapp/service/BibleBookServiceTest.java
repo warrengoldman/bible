@@ -103,6 +103,13 @@ class BibleBookServiceTest {
 		}
 	}
 
+	@Test
+	public void getMetaData() throws Exception {
+		when (elasticsearchClientRepository.getElasticsearchClient()).thenReturn(getClientSsl());
+		SearchResponse<BibleBook> metaData = bibleBookService.getMetaData();
+		System.out.println(metaData);
+	}
+
 	private ElasticsearchClient getClientSsl() throws Exception {
 		String certName = "C:\\tools\\elastic\\elasticsearch-8.12.0\\config\\certs\\http_ca.crt";
 		String userName = "elastic";
