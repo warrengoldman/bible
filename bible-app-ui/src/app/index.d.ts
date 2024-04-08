@@ -1,4 +1,8 @@
 declare global {
+  type BibleBook = {
+
+  };
+
   type VerseHit = {
     chapterVerseOffset: {
       chapterOffset: number;
@@ -24,5 +28,10 @@ declare global {
         BibleBookHit
       ];
     }
+  type BibleBookMetaData = {
+    name: string;
+    id: string;
+    chapterCount: number;
+  }
 }
 export {};

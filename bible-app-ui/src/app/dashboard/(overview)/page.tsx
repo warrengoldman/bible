@@ -12,8 +12,6 @@ export default async function Page({
   };
 }) {
   const query = searchParams?.query || '';
-  
-  const bookMetaData = await bibleMetaData();
 
   return (
     <main>
@@ -22,7 +20,7 @@ export default async function Page({
       </h1>
       <div className="w-full">
         <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-          <Search placeholder="Search verses..." query={query} bookMetaData={bookMetaData}/>
+          <Search placeholder="Search verses..." query={query} bookMetaData={await bibleMetaData()}/>
         </div>
         <Suspense key={query} fallback={<BibleResultsSkeleton />}>
           <Table query={query} />
